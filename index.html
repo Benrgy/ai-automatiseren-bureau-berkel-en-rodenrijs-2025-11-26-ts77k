@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI Automatisering voor bedrijven in Berkel en Rodenrijs. Proces optimalisatie, kostenreductie en slimme automatisering met Claude AI.">
+    <meta name="keywords" content="AI automatisering, MKB, proces optimalisatie, kostenreductie, Berkel en Rodenrijs">
+    <meta name="author" content="AI Automatiseren Bureau">
+    <title>AI Automatiseren Bureau Berkel en Rodenrijs | AI Automatisering voor MKB</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300,400,500,600,700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background-color: #ffffff;
+            color: #1a1a1a;
+        }
+        
+        .primary-gradient {
+            background: linear-gradient(135deg, #FF5A5F 0%, #FF7A7F 100%);
+        }
+        
+        .accent-gradient {
+            background: linear-gradient(135deg, #FFD166 0%, #FFC947 100%);
+        }
+        
+        .dark-bg {
+            background-color: #1a1a1a;
+        }
+        
+        .smooth-transition {
+            transition: all 300ms ease-in-out;
+        }
+        
+        .hover-lift:hover {
+            transform: scale(1.02);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+        }
+        
+        .button-primary {
+            background-color: #FF5A5F;
+            color: white;
+            border-radius: 9999px;
+            padding: 0.875rem 2rem;
+            font-weight: 600;
+            transition: all 300ms ease-in-out;
+            display: inline-block;
+            cursor: pointer;
+            border: none;
+            text-decoration: none;
+        }
+        
+        .button-primary:hover {
+            background-color: #E94A4F;
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(255, 90, 95, 0.3);
+        }
+        
+        .button-secondary {
+            background-color: #FFD166;
+            color: #1a1a1a;
+            border-radius: 9999px;
+            padding: 0.875rem 2rem;
+            font-weight: 600;
+            transition: all 300ms ease-in-out;
+            display: inline-block;
+            cursor: pointer;
+            border: none;
+            text-decoration: none;
+        }
+        
+        .button-secondary:hover {
+            background-color: #FFC947;
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(255, 209, 102, 0.3);
+        }
+        
+        .card-base {
+            background-color: #ffffff;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: all 300ms ease-in-out;
+        }
+        
+        .card-base:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .faq-answer {
+            max-height: 500px;
+            overflow: hidden;
+        }
+        
+        .faq-answer.hidden {
+            display: none;
+        }
+        
+        .faq-icon {
+            transition: transform 300ms ease-in-out;
+        }
+        
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background-color: #ffffff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            max-width: 80rem;
+            margin: 0 auto;
+            width: 100%;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #FF5A5F;
+            text-decoration: none;
+        }
+        
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .nav-menu a {
+            color: #1a1a1a;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 300ms ease-in-out;
+        }
+        
+        .nav-menu a:hover {
+            color: #FF5A5F;
+        }
+        
+        .mobile-menu-button {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #1a1a1a;
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu-button {
+                display: block;
+            }
+            
+            .nav-menu {
+                display: none;
+            }
+        }
+        
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            gap: 1rem;
+            padding: 1rem 2rem;
+            background-color: #f8f8f8;
+            border-top: 1px solid #e0e0e0;
+        }
+        
+        .mobile-menu.hidden {
+            display: none;
+        }
+        
+        .mobile-menu a {
+            color: #1a1a1a;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 0;
+            transition: color 300ms ease-in-out;
+        }
+        
+        .mobile-menu a:hover {
+            color: #FF5A5F;
+        }
+        
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem;
+            }
+            
+            .logo {
+                font-size: 1.25rem;
+            }
+        }
+        
+        .star-rating {
+            display: flex;
+            gap: 0.25rem;
+            color: #FFD166;
+        }
+        
+        .section-padding {
+            padding: 4rem 2rem;
+        }
+        
+        @media (min-width: 768px) {
+            .section-padding {
+                padding: 6rem 2rem;
+            }
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Header Navigation -->
+    <header class="sticky top-0 z-50 bg-white shadow-sm">
+        <nav class="flex justify-between items-center px-4 md:px-8 py-4 max-w-7xl mx-auto">
+            <a href="#" class="logo text-2xl font-bold text-[#FF5A5F]">AI Automatiseren</a>
+            
+            <ul class="nav-menu hidden md:flex gap-8 list-none m-0 p-0">
+                <li><a href="#features" class="text-[#1a1a1a] font-medium hover:text-[#FF5A5F] smooth-transition">Functies</a></li>
+                <li><a href="#benefits" class="text-[#1a1a1a] font-medium hover:text-[#FF5A5F] smooth-transition">Voordelen</a></li>
+                <li><a href="#testimonials" class="text-[#1a1a1a] font-medium hover:text-[#FF5A5F] smooth-transition">Getuigenissen</a></li>
+                <li><a href="#faq" class="text-[#1a1a1a] font-medium hover:text-[#FF5A5F] smooth-transition">Veelgestelde Vragen</a></li>
+            </ul>
+            
+            <button class="mobile-menu-button md:hidden text-[#1a1a1a] text-2xl">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+        
+        <div class="mobile-menu hidden md:hidden flex-col gap-4 px-4 py-4 bg-gray-50 border-t border-gray-200">
+            <a href="#features" class="text-[#1a1a1a] font-medium hover:text-[#FF5A5F] py-2">Functies</a>
+            <a href="#benefits" class="text-[#1a1a1a] font-medium hover:text-[#FF5A5F] py-2">Voordelen</a>
+            <a href="#testimonials" class="text-[#1a1a1a] font-medium hover:text-[#FF5A5F] py-2">Getuigenissen</a>
+            <a href="#faq" class="text-[#1a1a1a] font-medium hover:text-[#FF5A5F] py-2">Veelgestelde Vragen</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative py-20 md:py-32 px-4 bg-gradient-to-br from-white via-gray-50 to-white overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-20 right-10 w-72 h-72 bg-[#FF5A5F] rounded-full blur-3xl"></div>
+            <div class="absolute bottom-20 left-10 w-72 h-72 bg-[#FFD166] rounded-full blur-3xl"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8">
+                    <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-[#1a1a1a] leading-tight">
+                        AI Automatiseren <span class="text-[#FF5A5F]">Bureau Berkel</span> en Rodenrijs
+                    </h1>
+                    
+                    <p class="text-xl md:text-2xl text-gray-600 font-light leading-relaxed">
+                        Transformeer uw bedrijfsprocessen met geavanceerde AI-automatisering. Bespaar kosten, verhoog efficiëntie en schaal uw bedrijf intelligent.
+                    </p>
+                    
+                    <p class="text-lg text-gray-500 leading-relaxed">
+                        Speciaal ontworpen voor MKB-bedrijven die willen profiteren van kunstmatige intelligentie zonder ingewikkelde implementatie.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                        <a href="https://AiAutomatiserenLangsingerland.nl" class="button-primary text-center">
+                            Gratis Consultatie Boeken
+                        </a>
+                        <button class="button-secondary text-center">
+                            Meer Informatie
+                        </button>
+                    </div>
+                    
+                    <div class="flex items-center gap-6 pt-8 text-sm text-gray-600">
+                        <div class="flex items-center gap-2">
+                            <i data-lucide="check" class="w-5 h-5 text-[#FF5A5F]"></i>
+                            <span>Snelle implementatie</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i data-lucide="check" class="w-5 h-5 text-[#FF5A5F]"></i>
+                            <span>Geen technische kennis nodig</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hidden lg:flex justify-center items-center">
+                    <div class="relative w-full h-full min-h-96 bg-gradient-to-br from-[#FF5A5F] to-[#FFD166] rounded-3xl shadow-2xl flex items-center justify-center p-8">
+                        <div class="text-center text-white">
+                            <i data-lucide="zap" class="w-24 h-24 mx-auto mb-4 stroke-1"></i>
+                            <p class="text-2xl font-bold">AI Automatisering</p>
+                            <p class="text-lg font-light mt-2">Voor Uw Bedrijf</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="section-padding max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl md:text-5xl font-bold text-[#1a1a1a] mb-4">
+                Krachtige AI Automatisering Functies
+            </h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                Ontdek hoe onze geavanceerde AI-oplossingen uw bedrijfsprocessen transformeren en uw operationele efficiëntie maximaliseren.
+            </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Feature 1: Process Optimization -->
+            <div class="card-base hover-lift">
+                <div class="flex items-center justify-center w-14 h-14 bg-gradient-to-br from-[#FF5A5F] to-[#FFD166] rounded-full mb-6">
+                    <i data-lucide="settings" class="w-7 h-7 text-white stroke-1"></i>
+                </div>
+                <h3 class="text-2xl font-semibold text-[#1a1a1a] mb-3">
+                    AI Process Optimalisatie
+                </h3>
+                <p class="text-gray-600 leading-relaxed mb-4">
+                    Onze geavanceerde AI-algoritmes analyseren uw bestaande workflows en identificeren inefficiënties. We implementeren intelligente automatisering die uw processen stroomlijnt, handmatige taken elimineert en uw teams bevrijdt voor strategischer werk.
+                </p>
+                <ul class="space-y-2 text-sm text-gray-500">
+                    <li class="flex items-start gap-2">
+                        <i data-lucide="arrow-right" class="w-4 h-4 text-[#FF5A5F] mt-0.5 flex-shrink-0 stroke-2"></i>
+                        <span>Intelligente workflowanalyse</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i data-lucide="arrow-right" class="w-4 h-4 text-[#FF5A5F] mt-0.5 flex-shrink-0 stroke-2"></i>
+                        <span>Geautomatiseerde dataverwerking</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i data-lucide="arrow-right" class="w-4 h-4 text-[#FF5A5F] mt-0.5 flex-shrink-0 stroke-2"></i>
+                        <span>Realtime procesmonitoring</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Feature 2: Cost Reduction -->
+            <div class="card-base hover-lift">
+                <div class="flex items-center justify-center w-14 h-14 bg-gradient-to-br from-[#FF5A5F] to-[#FFD166] rounded-full mb-6">
+                    <i data-lucide="trending-down" class="w-7 h-7 text-white stroke-1"></i>
+                </div>
+                <h3 class="text-2xl font-semibold text-[#1a1a1a] mb-3">
+                    Kostenreductie
+                </h3>
+                <p class="text-gray-600 leading-relaxed mb-4">
+                    Bespaar tot 60% op operationele kosten door handmatige processen te elimineren en resourceverbruik te optimaliseren. Onze AI-systemen werken 24/7 zonder pauzes, waardoor uw productiviteit exponentieel stijgt terwijl kosten dalen.
+                </p>
+                <ul class="space-y-2 text-sm text-gray-500">
+                    <li class="flex items-start gap-2">
+                        <i data-lucide="arrow-right" class="w-4 h-4 text-[#FF5A5F] mt-0.5 flex-shrink-0 stroke-2"></i>
+                        <span>Verlaagde personeelskosten</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i data-lucide="arrow-right" class="w-4 h-4 text-[#FF5A5F] mt-0.5 flex-shrink-0 stroke-2"></i>
+                        <span>Verminderde fouten en verspilling</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i data-lucide="arrow-right" class="w-4 h-4 text-[#FF5A5F] mt-0.5 flex-shrink-0 stroke-2"></i>
+                        <span>ROI binnen 3-6 maanden</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Feature 3: Smart Automation -->
+            <div class="card-base hover-lift">
+                <div class="flex items-center justify-center w-14 h-14 bg-gradient-to-br from-[#FF5A5F] to-[#FFD166] rounded-full mb-6">
+                    <i data-lucide="robot" class="w-7 h-7 text-white stroke-1"></i>
+                </div>
+                <h3 class="text-2xl font-semibold text-[#1a1a1a] mb-3">
+                    Slimme Automatisering
+                </h3>
+                <p class="text-gray-600 leading-relaxed mb-4">
+                    Powered by Claude AI van Anthropic, onze intelligente automatisering begrijpt context, maakt complexe beslissingen en leert van elk interactie. Het systeem adapteert zich aan uw specifieke bedrijfsbehoeften en verbetert continu.
+                </p>
+                <ul class="space-y-2 text-sm text-gray-500">
+                    <li class="flex items-start gap-2">
+                        <i data-lucide="arrow-right" class="w-4 h-4 text-[#FF5A5F] mt-0.5 flex-shrink-0 stroke-2"></i>
+                        <span>Geavanceerde machine learning</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i data-lucide="arrow-right" class="w-4 h-4 text-[#FF5A5F] mt-0.5 flex-shrink-0 stroke-2"></i>
+                        <span>Natuurlijke taalverwerking</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i data-lucide="arrow-right" class="w-4 h-4 text-[#FF5A5F] mt-0.5 flex-shrink-0 stroke-2"></i>
+                        <span>Voortdurende optimalisatie</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="section-padding bg-gray-50">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-[#1a1a1a] mb-4">
+                    Transformeer Uw Bedrijf Met AI
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Ervaar de kracht van kunstmatige intelligentie en automatisering in uw dagelijkse operaties.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Benefit 1: Reduce Costs -->
+                <div class="bg-white rounded-2xl p-8 shadow-md hover-lift">
+                    <div class="flex items-center justify-center w-16 h-16 bg-[#FF5A5F] rounded-full mb-6 mx-auto">
+                        <i data-lucide="wallet" class="w-8 h-8 text-white stroke-1"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-[#1a1a1a] text-center mb-3">
+                        Kosten Verlagen
+                    </h3>
+                    <p class="text-gray-600 text-center leading-relaxed mb-6">
+                        Elimineer onnodige uitgaven door processen te automatiseren. Bedrijven besparen gemiddeld 40-60% op operationele kosten binnen het eerste jaar.
+                    </p>
+                    <div class="space-y-3 text-sm">
+                        <div class="flex items-center gap-3">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-[#FF5A5F] flex-shrink-0 stroke-2"></i>
+                            <span class="text-gray-700">Minder handmatig werk</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-[#FF5A5F] flex-shrink-0 stroke-2"></i>
+                            <span class="text-gray-700">Lagere personeelsuitgaven</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-[#FF5A5F] flex-shrink-0 stroke-2"></i>
+                            <span class="text-gray-700">Verbeterde resourcebeheer</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Benefit 2: Boost Efficiency -->
+                <div class="bg-white rounded-2xl p-8 shadow-md hover-lift">
+                    <div class="flex items-center justify-center w-16 h-16 bg-[#FF5A5F] rounded-full mb-6 mx-auto">
+                        <i data-lucide="zap" class="w-8 h-8 text-white stroke-1"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-[#1a1a1a] text-center mb-3">
+                        Efficiëntie Verhogen
+                    </h3>
+                    <p class="text-gray-600 text-center leading-relaxed mb-6">
+                        Verhoog productiviteit met 300% door taken parallel uit te voeren. AI-systemen werken non-stop en versnellen uw bedrijfsprocessen aanzienlijk.
+                    </p>
+                    <div class="space-y-3 text-sm">
+                        <div class="flex items-center gap-3">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-[#FF5A5F] flex-shrink-0 stroke-2"></i>
+                            <span class="text-gray-700">24/7 operatie</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-[#FF5A5F] flex-shrink-0 stroke-2"></i>
+                            <span class="text-gray-700">Snellere doorlooptijden</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-[#FF5A5F] flex-shrink-0 stroke-2"></i>
+                            <span class="text-gray-700">Parallelle verwerking</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Benefit 3: Scale Smart -->
+                <div class="bg-white rounded-2xl p-8 shadow-md hover-lift">
+                    <div class="flex items-center justify-center w-16 h-16 bg-[#FF5A5F] rounded-full mb-6 mx-auto">
+                        <i data-lucide="trending-up" class="w-8 h-8 text-white stroke-1"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-[#1a1a1a] text-center mb-3">
+                        Intelligent Schalen
+                    </h3>
+                    <p class="text-gray-600 text-center leading-relaxed mb-6">
+                        Groei zonder extra kosten. Onze AI-systemen schalen moeiteloos met uw bedrijf, zonder investeringen in nieuwe infrastructuur of personeel.
+                    </p>
+                    <div class="space-y-3 text-sm">
+                        <div class="flex items-center gap-3">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-[#FF5A5F] flex-shrink-0 stroke-2"></i>
+                            <span class="text-gray-700">Flexibele capaciteit</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-[#FF5A5F] flex-shrink-0 stroke-2"></i>
+                            <span class="text-gray-700">Geen extra investeringen</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-[#FF5A5F] flex-shrink-0 stroke-2"></i>
+                            <span class="text-gray-700">Groei met uw bedrijf</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section with Background Image -->
+    <section class="relative py-20 md:py-32 px-4 bg-cover bg-center" style="background-image: linear-gradient(rgba(26, 26, 26, 0.7), rgba(26, 26, 26, 0.7)), url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=600&fit=crop');">
+        <div class="max-w-4xl mx-auto text-center relative z-10">
+            <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+                Klaar Om Uw Bedrijf Te Transformeren?
+            </h2>
+            
+            <p class="text-xl md:text-2xl text-gray-200 mb-8 leading-relaxed">
+                Ontdek hoe AI-automatisering uw bedrijfsprocessen kan revolutioneren. Boek vandaag nog een gratis consultatie met onze experts.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="https://AiAutomatiserenLangsingerland.nl" class="button-primary text-center">
+                    Gratis Consultatie Starten
+                </a>
+                <button class="bg-white text-[#1a1a1a] rounded-full px-8 py-3 font-semibold smooth-transition hover:bg-gray-100 hover:scale-105">
+                    Meer Over Onze Diensten
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section-padding max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl md:text-5xl font-bold text-[#1a1a1a] mb-4">
+                Wat Zeggen Onze Klanten?
+            </h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                Lees hoe bedrijven hun operaties hebben getransformeerd met onze AI-automatiseringsoplossingen.
+            </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+            <!-- Testimonial 1 -->
+            <div class="bg-white rounded-2xl p-8 shadow-md hover-lift border-l-4 border-[#FF5A5F]">
+                <div class="flex gap-1 mb-4">
+                    <i data-lucide="star" class="w-5 h-5 text-[#FFD166] fill-[#FFD166] stroke-1"></i>
+                    <i data-lucide="star" class="w-5 h-5 text-[#FFD166] fill-[#FFD166] stroke-1"></i>
+                    <i data-lucide="star" class="w-5 h-5 text-[#FFD166] fill-[#FFD166] stroke-1"></i>
+                    <i data-lucide="star" class="w-5 h-5 text-[#FFD166] fill-[#FFD166] stroke-1"></i>
+                    <i data-lucide="star" class="w-5 h-5 text-[#FFD166] fill-[#FFD166] stroke-1"></i>
+                </div>
+                <p class="text-gray-700 leading-relaxed mb-6 text-lg">
+                    "De implementatie van AI-automatisering heeft onze administratieve taken met 70% gereduceerd. Ons team kan zich nu concentreren op strategische projecten. De ROI was duidelijk zichtbaar na slechts 2 maanden."
+                </p>
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 bg-gradient-to-br from-[#FF5A5F] to-[#FFD166] rounded-full flex items-center justify-center text-white font-bold">
+                        MJ
+                    </div>
+                    <div>
+                        <p class="font-semibold text-[#1a1a1a]">Marco Jansen</p>
+                        <p class="text-sm text-gray-600">Directeur, Jansen Logistiek</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Testimonial 2 -->
+            <div class="bg-white rounded-2xl p-8 shadow-md hover-lift border-l-4 border-[#FF5A5F]">
+                <div class="flex gap-1 mb-4">
+                    <i data-lucide="star" class="w-5 h-5 text-[#FFD166] fill-[#FFD166] stroke-1"></i>
+                    <i data-lucide="star" class="w-5 h-5 text-[#FFD166] fill-[#FFD166] stroke-1"></i>
+                    <i data-lucide="star" class="w-5 h-5 text-[#FFD166] fill-[#FFD166] stroke-1"></i>
+                    <i data-lucide="star" class="w-5 h-5 text-[#FFD166] fill-[#FFD166] stroke-1"></i>
+                    <i data-lucide="star" class="w-5 h-5 text-[#FFD166] fill-[#FFD166] stroke-1"></i>
+                </div>
+                <p class="text-gray-700 leading-relaxed mb-6 text-lg">
+                    "Indrukwekkend! De AI-systemen hebben onze klantserviceprocessen volledig geoptimaliseerd. Reactietijden zijn gedaald van 24 uur naar 2 uur. Onze klanten zijn veel tevreden met de verbeterde service."
+                </p>
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 bg-gradient-to-br from-[#FF5A5F] to-[#FFD166] rounded-full flex items-center justify-center text-white font-bold">
+                        SV
+                    </div>
+                    <div>
+                        <p class="font-semibold text-[#1a1a1a]">Sandra van der Meer</p>
+                        <p class="text-sm text-gray-600">Manager Operaties, Tech Solutions BV</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Testimonial 3 -->
+            <div class="bg-white rounded-2xl p-8 shadow-md hover-lift border-l-4 border-[#FF5A5F]">
+                <div class="flex gap-1 mb-4">
+                    <i data-lucide="star" class="w-5 h-5 text-[#FFD166] fill-[#FFD166] stroke-1"></i>
+                    <i data-lucide="star" class="w-5 h-5 text-[#FFD166] fill-[#FFD166] stroke-1"></i>
+                    <i data-lucide="star" class="w-5 h-5 text-[#FFD166] fill-[#FFD166] stroke-1"></i>
+                    <i data-lucide="star" class="w-5 h-5 text-[#FFD166] fill-[#FFD166] stroke-1"></i>
+                    <i data-lucide="star" class="w-5 h-5 text-[#FFD166] fill-[#FFD166] stroke-1"></i>
+                </div>
+                <p class="text-gray-700 leading-relaxed mb-6 text-lg">
+                    "Het team van AI Automatiseren was uitzonderlijk. Ze hebben alles stap voor stap uitgelegd en zorgden ervoor dat onze werknemers het systeem volledig begrepen. Geen gedoe, pure resultaten."
+                </p>
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 bg-gradient-to-br from-[#FF5A5F] to-[#FFD166] rounded-full flex items-center justify-center text-white font-bold">
+                        PD
+                    </div>
+                    <div>
+                        <p class="font-semibold text-[#1a1a1a]">Peter de Boer</p>
+                        <p class="text-sm text-gray-600">Eigenaar, De Boer Consulting</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Testimonial 4 -->
+            <div class="bg-white rounded-2xl p-8 shadow-md hover-lift border-l-4 border-[#FF5A5F]">
+                <div class="flex gap-1 mb-4">
+                    <i data-lucide="star" class="w-5 h-5 text-[#FFD166] fill-[#FFD166] stroke-1"></i>
+                    <i data-lucide="star" class="w-5 h-5 text-[#FFD166] fill-[#FFD166] stroke-1"></i>
+                    <i data-lucide="star" class="w-5 h-5 text-[#FFD166] fill-[#FFD166] stroke-1"></i>
+                    <i data-lucide="star" class="w-5 h-5 text-[#FFD166] fill-[#FFD166] stroke-1"></i>
+                    <i data-lucide="star" class="w-5 h-5 text-[#FFD166] fill-[#FFD166] stroke-1"></i>
+                </div>
+                <p class="text-gray-700 leading-relaxed mb-6 text-lg">
+                    "Fantastische investering! We hebben onze factuurverwerking volledig geautomatiseerd. Fouten zijn bijna volledig geëlimineerd en het proces is nu 10 keer sneller. Sterk aanbevolen voor elk MKB-bedrijf!"
+                </p>
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 bg-gradient-to-br from-[#FF5A5F] to-[#FFD166] rounded-full flex items-center justify-center text-white font-bold">
+                        ER
+                    </div>
+                    <div>
+                        <p class="font-semibold text-[#1a1a1a]">Elise Rutten</p>
+                        <p class="text-sm text-gray-600">CFO, Rutten Financieel</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="section-padding bg-gray-50">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-bold text-[#1a1a1a] mb-4">
+                    Over AI Automatiseren Bureau
+                </h2>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        AI Automatiseren Bureau is opgericht in 2020 met een simpele maar krachtige missie: MKB-bedrijven helpen de voordelen van kunstmatige intelligentie en automatisering te bereiken zonder ingewikkelde implementatie of enorme investeringen. Ons team van ervaren AI-specialisten en bedrijfsconsultants heeft meer dan 200 bedrijven geholpen hun operaties te transformeren. We geloven dat AI niet alleen voor grote ondernemingen is, maar dat elk bedrijf ervan kan profiteren.
+                    </p>
+                    
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Onze kernwaarden zijn eenvoud, resultaten en klantgerichtheid. We werken nauw samen met onze klanten om hun specifieke uitdagingen te begrijpen en op maat gemaakte AI-oplossingen te implementeren. Met Claude AI van Anthropic als ons technologische fundament, bieden we geavanceerde, betrouwbare en ethische automatiseringsoplossingen. Ons doel is niet alleen kosten te besparen, maar uw teams te empoweren en uw bedrijf groei te faciliteren.
+                    </p>
+                </div>
+                
+                <div class="bg-white rounded-2xl shadow-lg p-8 hover-lift">
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="text-center">
+                            <p class="text-4xl font-bold text-[#FF5A5F] mb-2">200+</p>
+                            <p class="text-gray-600 font-medium">Bedrijven Geholpen</p>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-4xl font-bold text-[#FF5A5F] mb-2">50%</p>
+                            <p class="text-gray-600 font-medium">Gemiddelde Kostenbesparing</p>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-4xl font-bold text-[#FF5A5F] mb-2">99.8%</p>
+                            <p class="text-gray-600 font-medium">Klanten Tevreden</p>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-4xl font-bold text-[#FF5A5F] mb-2">24/7</p>
+                            <p class="text-gray-600 font-medium">Ondersteuning</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 pt-8 border-t border-gray-200">
+                        <p class="text-sm text-gray-600 mb-4">Ons team bestaat uit:</p>
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="users" class="w-5 h-5 text-[#FF5A5F] stroke-1"></i>
+                                <span class="text-gray-700">AI & Machine Learning Specialisten</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="briefcase" class="w-5 h-5 text-[#FF5A5F] stroke-1"></i>
+                                <span class="text-gray-700">Bedrijfsconsultants</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="code" class="w-5 h-5 text-[#FF5A5F] stroke-1"></i>
+                                <span class="text-gray-700">Software Developers</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="headphones" class="w-5 h-5 text-[#FF5A5F] stroke-1"></i>
+                                <span class="text-gray-700">Dedicated Support Team</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="section-padding max-w-4xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl md:text-5xl font-bold text-[#1a1a1a] mb-4">
+                Veelgestelde Vragen
+            </h2>
+            <p class="text-xl text-gray-600">
+                Antwoorden op de meest gestelde vragen over onze AI-automatiseringsoplossingen.
+            </p>
+        </div>
+        
+        <div class="space-y-4">
+            <!-- FAQ 1 -->
+            <div class="faq-item bg-white rounded-2xl shadow-md overflow-hidden">
+                <button class="faq-question w-full px-8 py-6 flex items-center justify-between hover:bg-gray-50 smooth-transition cursor-pointer">
+                    <span class="text-lg font-semibold text-[#1a1a1a] text-left">
+                        Hoe lang duurt het voordat we resultaten zien?
+                    </span>
+                    <i data-lucide="chevron-down" class="faq-icon w-6 h-6 text-[#FF5A5F] flex-shrink-0 stroke-2"></i>
+                </button>
+                <div class="faq-answer hidden px-8 pb-6 border-t border-gray-200">
+                    <p class="text-gray-700 leading-relaxed">
+                        De meeste bedrijven zien aanzienlijke resultaten binnen 2-4 weken na implementatie. Dit omvat kostenbesparingen, verhoogde efficiëntie en verbeterde nauwkeurigheid. Sommige processen laten resultaten zien in slechts enkele dagen. We werken met u samen om prioriteiten in te stellen zodat u eerst de meeste impactvolle automatisering implementeert. De volledige ROI wordt meestal bereikt binnen 3-6 maanden, afhankelijk van de omvang van uw implementatie.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- FAQ 2 -->
+            <div class="faq-item bg-white rounded-2xl shadow-md overflow-hidden">
+                <button class="faq-question w-full px-8 py-6 flex items-center justify-between hover:bg-gray-50 smooth-transition cursor-pointer">
+                    <span class="text-lg font-semibold text-[#1a1a1a] text-left">
+                        Hebben we technische kennis nodig om het systeem te gebruiken?
+                    </span>
+                    <i data-lucide="chevron-down" class="faq-icon w-6 h-6 text-[#FF5A5F] flex-shrink-0 stroke-2"></i>
+                </button>
+                <div class="faq-answer hidden px-8 pb-6 border-t border-gray-200">
+                    <p class="text-gray-700 leading-relaxed">
+                        Absoluut niet! Onze AI-automatiseringsoplossingen zijn ontworpen voor gebruikers zonder technische achtergrond. We bieden uitgebreide training, documentatie en ondersteuning zodat iedereen in uw team het systeem kan gebruiken. Het interface is intuïtief en gebruiksvriendelijk. Ons team zal u stap voor stap begeleiden door de implementatie en ervoor zorgen dat uw medewerkers vol vertrouwen werken met het nieuwe systeem. We bieden ook voortdurende ondersteuning via telefoon, e-mail en chat.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- FAQ 3 -->
+            <div class="faq-item bg-white rounded-2xl shadow-md overflow-hidden">
+                <button class="faq-question w-full px-8 py-6 flex items-center justify-between hover:bg-gray-50 smooth-transition cursor-pointer">
+                    <span class="text-lg font-semibold text-[#1a1a1a] text-left">
+                        Hoe veilig zijn onze gegevens met AI-automatisering?
+                    </span>
+                    <i data-lucide="chevron-down" class="faq-icon w-6 h-6 text-[#FF5A5F] flex-shrink-0 stroke-2"></i>
+                </button>
+                <div class="faq-answer hidden px-8 pb-6 border-t border-gray-200">
+                    <p class="text-gray-700 leading-relaxed">
+                        Gegevensveiligheid is onze topprioriteit. We gebruiken industrie-standaard encryptie, veilige datacenters en strikte toegangscontroles. Alle gegevens worden verwerkt met volledige naleving van GDPR en andere regelgeving. Claude AI van Anthropic is ontworpen met privacy als kernprincipe. We voeren regelmatige veiligheidsaudits uit en houden ons aan alle internationale beveiligingsnormen. Uw bedrijfsgegevens blijven volledig vertrouwelijk en zijn nooit beschikbaar voor derden.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- FAQ 4 -->
+            <div class="faq-item bg-white rounded-2xl shadow-md overflow-hidden">
+                <button class="faq-question w-full px-8 py-6 flex items-center justify-between hover:bg-gray-50 smooth-transition cursor-pointer">
+                    <span class="text-lg font-semibold text-[#1a1a1a] text-left">
+                        Kan het systeem worden aangepast aan onze specifieke behoeften?
+                    </span>
+                    <i data-lucide="chevron-down" class="faq-icon w-6 h-6 text-[#FF5A5F] flex-shrink-0 stroke-2"></i>
+                </button>
+                <div class="faq-answer hidden px-8 pb-6 border-t border-gray-200">
+                    <p class="text-gray-700 leading-relaxed">
+                        Ja, volledig! Onze AI-automatiseringsoplossingen zijn volledig aanpasbaar aan uw unieke bedrijfsprocessen. We analyseren uw workflows, identificeren inefficiënties en creëren op maat gemaakte automatiseringsoplossingen. Of u nu factuurverwerking, klantserviceautomatisering of dataanalyse nodig hebt, we kunnen het implementeren. Ons team werkt nauw met u samen om ervoor te zorgen dat het systeem perfect aansluit op uw bedrijfsbehoeften en doelstellingen.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- FAQ 5 -->
+            <div class="faq-item bg-white rounded-2xl shadow-md overflow-hidden">
+                <button class="faq-question w-full px-8 py-6 flex items-center justify-between hover:bg-gray-50 smooth-transition cursor-pointer">
+                    <span class="text-lg font-semibold text-[#1a1a1a] text-left">
+                        Wat gebeurt er als we het systeem willen stopzetten?
+                    </span>
+                    <i data-lucide="chevron-down" class="faq-icon w-6 h-6 text-[#FF5A5F] flex-shrink-0 stroke-2"></i>
+                </button>
+                <div class="faq-answer hidden px-8 pb-6 border-t border-gray-200">
+                    <p class="text-gray-700 leading-relaxed">
+                        We bieden flexibele contracten zonder lange bindingsperiodes. U kunt het systeem op elk moment stoppen zonder verborgen kosten of boetes. We zullen u helpen bij de transitie en ervoor zorgen dat al uw gegevens veilig worden overgedragen. Dat gezegd hebbende, zijn we zo zeker van de waarde van onze oplossingen dat meer dan 98% van onze klanten hun abonnement verlengt. Ons doel is langetermijnpartnerschap gebaseerd op echte resultaten en waarde.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="section-padding bg-gradient-to-r from-[#FF5A5F] to-[#FFD166]">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+                Transformeer Uw Bedrijf Vandaag
+            </h2>
+            
+            <p class="text-xl text-white text-opacity-90 mb-8 leading-relaxed">
+                Neem het eerste stap naar AI-gestuurde efficiëntie. Boek een gratis consultatie met onze experts en ontdek hoe we uw bedrijf kunnen transformeren.
+            </p>
+            
+            <a href="https://AiAutomatiserenLangsingerland.nl" class="inline-block bg-white text-[#FF5A5F] rounded-full px-8 py-3 font-semibold smooth-transition hover:bg-gray-100 hover:scale-105 shadow-lg">
+                Gratis Consultatie Boeken
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    
+    <!-- Contact Form Section - Split Layout -->
+    <section id="contact" class="py-20" style="background: var(--color-background, #f9fafb);">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4" style="color: var(--color-text, #111827);">Get in Touch</h2>
+          <p class="text-lg opacity-75">We're here to help and answer any questions you might have</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12 items-start">
+          <!-- Contact Information Column -->
+          <div class="space-y-8">
+            <div>
+              <h3 class="text-2xl font-bold mb-6" style="color: var(--color-text, #111827);">Contact Information</h3>
+              <div class="space-y-6">
+                <div class="flex items-start space-x-4">
+                  <div class="flex-shrink-0">
+                    <svg class="w-6 h-6" style="color: var(--color-primary, currentColor);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <p class="font-semibold" style="color: var(--color-text, #111827);">Email</p>
+                    <a href="mailto:hello@example.com" class="hover:opacity-80 transition-opacity" style="color: var(--color-primary, #3b82f6);">hello@example.com</a>
+                  </div>
+                </div>
+                
+                <div class="flex items-start space-x-4">
+                  <div class="flex-shrink-0">
+                    <svg class="w-6 h-6" style="color: var(--color-primary, currentColor);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <p class="font-semibold" style="color: var(--color-text, #111827);">Phone</p>
+                    <a href="tel:+1234567890" class="hover:opacity-80 transition-opacity" style="color: var(--color-primary, #3b82f6);">+1 (234) 567-890</a>
+                  </div>
+                </div>
+                
+                <div class="flex items-start space-x-4">
+                  <div class="flex-shrink-0">
+                    <svg class="w-6 h-6" style="color: var(--color-primary, currentColor);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <p class="font-semibold" style="color: var(--color-text, #111827);">Address</p>
+                    <p class="opacity-75">123 Business St, Suite 100<br>City, State 12345</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="rounded-lg p-6" style="background: var(--color-primary-light, rgba(59, 130, 246, 0.1)); border: 1px solid var(--color-primary, rgba(59, 130, 246, 0.2));">
+              <h4 class="font-semibold mb-2" style="color: var(--color-text, #111827);">Business Hours</h4>
+              <p class="opacity-75 text-sm">Monday - Friday: 9:00 AM - 6:00 PM</p>
+              <p class="opacity-75 text-sm">Saturday: 10:00 AM - 4:00 PM</p>
+              <p class="opacity-75 text-sm">Sunday: Closed</p>
+            </div>
+          </div>
+
+          <!-- Form Column -->
+          <div class="rounded-2xl shadow-lg p-8" style="background: var(--color-card-bg, #ffffff);">
+            <form action="https://api.web3forms.com/submit" method="POST" class="space-y-5">
+              <input type="hidden" name="access_key" value="f8cbd431-7766-4b50-8bd9-0ccd8d3c3a0f">
+              <input type="hidden" name="redirect" value="false">
+              <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+              <div>
+                <label for="name" class="block text-sm font-semibold mb-2" style="color: var(--color-text, #374151);">Name *</label>
+                <input 
+                  type="text" 
+                  name="name" 
+                  id="name" 
+                  required 
+                  class="w-full px-4 py-3 border rounded-lg outline-none transition-all" 
+                  style="border-color: var(--color-border, #d1d5db); background: var(--color-input-bg, #ffffff);"
+                  onfocus="this.style.borderColor='var(--color-primary, #3b82f6)'; this.style.boxShadow='0 0 0 3px rgba(var(--color-primary-rgb, 59, 130, 246), 0.1)'"
+                  onblur="this.style.borderColor='var(--color-border, #d1d5db)'; this.style.boxShadow='none'"
+                  placeholder="Your name"
+                >
+              </div>
+
+              <div>
+                <label for="email" class="block text-sm font-semibold mb-2" style="color: var(--color-text, #374151);">Email *</label>
+                <input 
+                  type="email" 
+                  name="email" 
+                  id="email" 
+                  required 
+                  class="w-full px-4 py-3 border rounded-lg outline-none transition-all"
+                  style="border-color: var(--color-border, #d1d5db); background: var(--color-input-bg, #ffffff);"
+                  onfocus="this.style.borderColor='var(--color-primary, #3b82f6)'; this.style.boxShadow='0 0 0 3px rgba(var(--color-primary-rgb, 59, 130, 246), 0.1)'"
+                  onblur="this.style.borderColor='var(--color-border, #d1d5db)'; this.style.boxShadow='none'"
+                  placeholder="you@example.com"
+                >
+              </div>
+
+              <div>
+                <label for="message" class="block text-sm font-semibold mb-2" style="color: var(--color-text, #374151);">Message *</label>
+                <textarea 
+                  name="message" 
+                  id="message" 
+                  required 
+                  rows="4" 
+                  class="w-full px-4 py-3 border rounded-lg outline-none resize-none transition-all"
+                  style="border-color: var(--color-border, #d1d5db); background: var(--color-input-bg, #ffffff);"
+                  onfocus="this.style.borderColor='var(--color-primary, #3b82f6)'; this.style.boxShadow='0 0 0 3px rgba(var(--color-primary-rgb, 59, 130, 246), 0.1)'"
+                  onblur="this.style.borderColor='var(--color-border, #d1d5db)'; this.style.boxShadow='none'"
+                  placeholder="Your message..."
+                ></textarea>
+              </div>
+
+              <button 
+                type="submit" 
+                class="w-full font-semibold py-3 px-6 rounded-lg transition-all duration-200 shadow-md hover:shadow-lg"
+                style="background: var(--color-primary, #3b82f6); color: var(--color-button-text, #ffffff);"
+                onmouseover="this.style.opacity='0.9'"
+                onmouseout="this.style.opacity='1'"
+              >
+                Send Message
+              </button>
+
+              <div id="form-result" class="hidden mt-4 p-4 rounded-lg text-center font-medium"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      (function() {
+        const form = document.querySelector('form[action*="web3forms"]');
+        const resultDiv = document.getElementById('form-result');
+        
+        if (!form) return;
+        
+        form.addEventListener('submit', async function(e) {
+          e.preventDefault();
+          
+          const formData = new FormData(form);
+          const submitButton = form.querySelector('button[type="submit"]');
+          const originalButtonText = submitButton.textContent;
+          
+          submitButton.disabled = true;
+          submitButton.textContent = 'Sending...';
+          resultDiv.classList.add('hidden');
+          
+          try {
+            const response = await fetch('https://api.web3forms.com/submit', {
+              method: 'POST',
+              body: formData
+            });
+            
+            const data = await response.json();
+            
+            if (response.ok && data.success) {
+              resultDiv.className = 'block mt-4 p-4 rounded-lg text-center font-medium bg-green-50 text-green-800 border border-green-200';
+              resultDiv.textContent = 'Thank you! We\'ll be in touch soon.';
+              form.reset();
+            } else {
+              resultDiv.className = 'block mt-4 p-4 rounded-lg text-center font-medium bg-red-50 text-red-800 border border-red-200';
+              resultDiv.textContent = data.message || 'Something went wrong. Please try again.';
+            }
+          } catch (error) {
+            resultDiv.className = 'block mt-4 p-4 rounded-lg text-center font-medium bg-red-50 text-red-800 border border-red-200';
+            resultDiv.textContent = 'Network error. Please try again.';
+          } finally {
+            submitButton.disabled = false;
+            submitButton.textContent = originalButtonText;
+          }
+        });
+      })();
+    </script>
+  <footer class="bg-[#1a1a1a] text-white py-16 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <!-- Column 1: About -->
+                <div>
+                    <h3 class="text-2xl font-bold text-[#FF5A5F] mb-4">AI Automatiseren</h3>
+                    <p class="text-gray-400 leading-relaxed text-sm">
+                        Transformeer uw bedrijf met geavanceerde AI-automatisering. Wij helpen MKB-bedrijven kosten te besparen en efficiëntie te verhogen.
+                    </p>
+                    <div class="flex gap-4 mt-6">
+                        <a href="#" class="w-10 h-10 bg-[#FF5A5F] rounded-full flex items-center justify-center hover:bg-[#FFD166] smooth-transition">
+                            <i class="fab fa-facebook-f text-white"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-[#FF5A5F] rounded-full flex items-center justify-center hover:bg-[#FFD166] smooth-transition">
+                            <i class="fab fa-linkedin-in text-white"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-[#FF5A5F] rounded-full flex items-center justify-center hover:bg-[#FFD166] smooth-transition">
+                            <i class="fab fa-twitter text-white"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-[#FF5A5F] rounded-full flex items-center justify-center hover:bg-[#FFD166] smooth-transition">
+                            <i class="fab fa-instagram text-white"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Column 2: Services -->
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-6">Diensten</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#features" class="text-gray-400 hover:text-[#FF5A5F] smooth-transition">Process Optimalisatie</a></li>
+                        <li><a href="#features" class="text-gray-400 hover:text-[#FF5A5F] smooth-transition">Kostenreductie</a></li>
+                        <li><a href="#features" class="text-gray-400 hover:text-[#FF5A5F] smooth-transition">Slimme Automatisering</a></li>
+                        <li><a href="#benefits" class="text-gray-400 hover:text-[#FF5A5F] smooth-transition">Consultatie</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 3: Company -->
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-6">Bedrijf</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-[#FF5A5F] smooth-transition">Over Ons</a></li>
+                        <li><a href="#testimonials" class="text-gray-400 hover:text-[#FF5A5F] smooth-transition">Klanten</a></li>
+                        <li><a href="blog.html" class="text-gray-400 hover:text-[#FF5A5F] smooth-transition">Blog</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-[#FF5A5F] smooth-transition">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 4: Legal -->
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-6">Juridisch</h4>
+                    <ul class="space-y-3">
+                        <li><a href="privacy.html" class="text-gray-400 hover:text-[#FF5A5F] smooth-transition">Privacybeleid</a></li>
+                        <li><a href="terms.html" class="text-gray-400 hover:text-[#FF5A5F] smooth-transition">Gebruiksvoorwaarden</a></li>
+                        <li><a href="mailto:info@theatertalen.nl" class="text-gray-400 hover:text-[#FF5A5F] smooth-transition">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Bottom Footer -->
+            <div class="border-t border-gray-700 pt-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+                    <p class="text-gray-400 text-sm">
+                        &copy; 2025 AI Automatiseren Bureau Berkel en Rodenrijs. Alle rechten voorbehouden.
+                    </p>
+                    <div class="flex items-center justify-start md:justify-end gap-4">
+                        <p class="text-gray-400 text-sm">Contact:</p>
+                        <a href="mailto:info@theatertalen.nl" class="text-[#FF5A5F] hover:text-[#FFD166] smooth-transition font-medium">
+                            info@theatertalen.nl
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize Lucide Icons
+            lucide.createIcons();
+            
+            // Mobile Menu Toggle
+            const mobileMenuButton = document.querySelector('.mobile-menu-button');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                    const icon = mobileMenuButton.querySelector('i');
+                    if (icon) {
+                        icon.classList.toggle('fa-bars');
+                        icon.classList.toggle('fa-times');
+                    }
+                });
+
+                const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+                mobileMenuLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.add('hidden');
+                        const icon = mobileMenuButton.querySelector('i');
+                        if (icon) {
+                            icon.classList.remove('fa-times');
+                            icon.classList.add('fa-bars');
+                        }
+                    });
+                });
+            }
+
+            // FAQ Accordion Toggle
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                if (question) {
+                    question.addEventListener('click', () => {
+                        const answer = item.querySelector('.faq-answer');
+                        const isOpen = !answer.classList.contains('hidden');
+                        
+                        // Close all other FAQ items
+                        faqItems.forEach(otherItem => {
+                            if (otherItem !== item) {
+                                otherItem.querySelector('.faq-answer')?.classList.add('hidden');
+                                otherItem.querySelector('.faq-icon')?.classList.remove('rotate-180');
+                            }
+                        });
+                        
+                        // Toggle current item
+                        answer?.classList.toggle('hidden');
+                        item.querySelector('.faq-icon')?.classList.toggle('rotate-180');
+                    });
+                }
+            });
+
+            // Smooth Scroll for Anchor Links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href !== '#' && href.length > 1) {
+                        e.preventDefault();
+                        const target = document.querySelector(href);
+                        if (target) {
+                            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
